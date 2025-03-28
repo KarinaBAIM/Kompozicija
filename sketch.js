@@ -1,5 +1,21 @@
+
+function windowResized() {
+  console.log("resized");
+  let width = document.querySelector("#sketch-div").clientWidth;
+  console.log(width);
+  let height = document.querySelector("#sketch-div").clientHeight;
+  console.log(height);
+ 
+  resizeCanvas(width, windowHeight);
+  
+}
+
+
 function setup() {
-  createCanvas(400, 400);
+  var canvas = createCanvas(windowWidth, windowHeight)
+  canvas.parent('sketch-div')
+  canvas.position(0, 0)
+  canvas.style('z-index', '-1')
 }
 
 function draw() {
